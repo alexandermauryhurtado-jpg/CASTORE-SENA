@@ -1,0 +1,341 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.avatarLarge {
+  width: 90px;
+  height: 90px;
+  background-color: #FFF7ED;
+  color: #F97316;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  border: 2px solid #FFEDD5;
+  margin-bottom: var(--space-2);
+}
+
+.avatarLabel {
+  font-size: 11px;
+  color: var(--color-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fieldBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fieldLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.required {
+  color: #EF4444;
+}
+
+.select {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  background-color: var(--color-surface);
+  color: var(--color-dark);
+  width: 100%;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.fieldError {
+  font-size: var(--text-xs);
+  color: #EF4444;
+}
+
+.emailWrapper {
+  position: relative;
+}
+
+.emailLoading, .emailCheck, .emailTaken {
+  position: absolute;
+  right: 12px;
+  top: 36px;
+}
+
+.emailLoading {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.emailCheck { color: #10B981; }
+.emailTaken { color: #EF4444; }
+
+.infoAlert, .warningAlert {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  margin-top: var(--space-4);
+}
+
+.infoAlert {
+  background-color: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #DBEAFE;
+}
+
+.warningAlert {
+  background-color: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #FEF3C7;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Sidebar Preview */
+.previewCol {
+  position: sticky;
+  top: var(--space-6);
+}
+
+.previewCard {
+  background-color: #F8FAFC;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+
+.previewHeader {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.previewIcon {
+  color: var(--color-primary);
+}
+
+.previewTitle {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.previewSubtitle {
+  font-size: 11px;
+  color: var(--color-mid);
+}
+
+.emptyPreview {
+  padding: var(--space-12) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #CBD5E1;
+  gap: var(--space-4);
+}
+
+.emptyPreview p {
+  font-size: var(--text-xs);
+  max-width: 180px;
+}
+
+.permissionMatrix {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.matrixRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: white;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+}
+
+.moduleName {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-mid);
+}
+
+.permsList {
+  display: flex;
+  gap: 4px;
+}
+
+.permItem {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F5F9;
+  color: #94A3B8;
+  font-size: 8px;
+  gap: 1px;
+}
+
+.permActive {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.previewFooter {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.roleLink {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.roleLink:hover { text-decoration: underline; }
+
+.systemBadge {
+  font-size: 10px;
+  color: #9A3412;
+  background-color: #FFEDD5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: help;
+  position: relative;
+}
+
+.badgeTooltip {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1F2937;
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  width: 150px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+
+.systemBadge:hover .badgeTooltip {
+  visibility: visible;
+  opacity: 1;
+}

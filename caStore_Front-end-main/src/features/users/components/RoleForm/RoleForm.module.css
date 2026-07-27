@@ -1,0 +1,345 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-8);
+}
+
+.titleStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--color-mid);
+  font-size: var(--text-sm);
+}
+
+.bannerInfo {
+  background-color: #FFFBEB;
+  border: 1px solid #FEF3C7;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: #92400E;
+  margin-bottom: var(--space-8);
+}
+
+.bannerInfo a {
+  color: #D97706;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.layoutBody {
+  display: flex;
+  gap: var(--space-10);
+  align-items: flex-start;
+}
+
+.formCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.sectionSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.badgePreviewRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: 4px;
+}
+
+.previewLabel {
+  font-size: 11px;
+  color: var(--color-mid);
+  text-transform: uppercase;
+}
+
+.roleBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  background-color: #F1F5F9;
+  color: #64748B;
+  border-radius: var(--radius-full);
+}
+
+.fieldLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.textarea {
+  min-height: 100px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.errorArea {
+  border-color: #EF4444;
+}
+
+.counter {
+  font-size: 11px;
+  color: var(--color-mid);
+  text-align: right;
+  margin-top: -6px;
+}
+
+.errorText {
+  font-size: 12px;
+  color: #EF4444;
+}
+
+.templateGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.templateCard {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.templateCard:hover {
+  border-color: var(--color-primary);
+  background-color: #F8FAFC;
+}
+
+.selectedTemplate {
+  border-color: var(--color-primary);
+  background-color: #F0F9FF;
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.templateIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mid);
+  flex-shrink: 0;
+}
+
+.selectedTemplate .templateIcon {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.templateInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.templateName {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.templateDesc {
+  font-size: 11px;
+  color: var(--color-mid);
+}
+
+.errorBanner {
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: #B91C1C;
+  font-size: var(--text-sm);
+  margin-top: var(--space-4);
+}
+
+.formFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Preview Column */
+.previewCol {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.stickyContent {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.previewHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.previewTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.previewSubtitle {
+  font-size: 12px;
+  color: var(--color-mid);
+}
+
+.previewCardBox {
+  padding: 2px; /* For shadow */
+}
+
+.summaryText {
+  font-size: 13px;
+  color: var(--color-dark-2);
+  line-height: 1.6;
+  background-color: #F8FAFC;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.simulatorSection {
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.simulatorTitle {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 4px 0;
+}
+
+.simulatorDesc {
+  font-size: 11px;
+  color: var(--color-mid);
+  margin-bottom: var(--space-5);
+}
+
+.miniSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #F8FAFC;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-dark-2);
+  padding: 6px 12px;
+  position: relative;
+}
+
+.sidebarDisabled {
+  color: #94A3B8;
+  opacity: 0.6;
+}
+
+.lineThrough {
+  position: absolute;
+  left: 36px;
+  right: 12px;
+  height: 1px;
+  background-color: #CBD5E1;
+}
+
+@media (max-width: 1200px) {
+  .previewCol { width: 300px; }
+  .templateGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .layoutBody { flex-direction: column; }
+  .previewCol { width: 100%; order: 2; }
+  .formCol { order: 1; }
+  .stickyContent { position: static; }
+}

@@ -1,0 +1,180 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.searchWrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.viewToggle {
+  display: flex;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: var(--color-mid);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.toggleBtn:hover {
+  color: var(--color-dark);
+}
+
+.toggleActive {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.viewContainer {
+  min-height: 400px;
+}
+
+.flatNameCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.flatName {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.flatType, .flatTypeMain {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.flatType { color: var(--color-mid); }
+.flatTypeMain { color: var(--color-primary); }
+
+.skuInline {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: var(--text-xs);
+}
+
+.flatActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--color-mid);
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.iconBtn:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+}
+
+.deleteModalBody {
+  padding: var(--space-2) 0;
+}
+
+.blockingError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+}
+
+.errorIconBox {
+  color: var(--color-error);
+}
+
+.errorMsg {
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.associatedList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-4);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-2);
+}
+
+.assocItem {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}
+
+.assocItem strong {
+  font-size: var(--text-xl);
+  color: var(--color-dark);
+}
+
+.confirmMsg {
+  color: var(--color-dark-2);
+  line-height: 1.5;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.paginationInfo {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}

@@ -1,0 +1,59 @@
+services:
+  - type: web
+    name: castore-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    # render.yaml no admite --target directamente; el stage 'production'
+    # debe ser el ÚLTIMO en el Dockerfile para que Render lo use por defecto.
+
+    envVars:
+      # ── Entorno ───────────────────────────────────────────────────────────
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+
+      # ── Base de datos Aiven (configurar en Render Dashboard como secrets) ─
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_POOL_MIN
+        value: "2"
+      - key: DB_POOL_MAX
+        value: "10"
+      - key: DB_SSL
+        value: "true"   # Aiven requiere SSL
+
+      # ── Seguridad ─────────────────────────────────────────────────────────
+      - key: JWT_SECRET
+        generateValue: true   # Render genera un valor seguro automáticamente
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: JWT_REFRESH_EXPIRES_IN
+        value: 7d
+      - key: BCRYPT_ROUNDS
+        value: "12"
+
+      # ── Correo (configurar en Render Dashboard como secrets) ──────────────
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+
+      # ── App ───────────────────────────────────────────────────────────────
+      - key: FRONTEND_URL
+        sync: false   # URL del frontend en producción (configurar manualmente)

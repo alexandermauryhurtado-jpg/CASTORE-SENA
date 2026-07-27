@@ -1,0 +1,358 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 800px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-dark);
+}
+
+.sectionDesc {
+  margin: 0;
+  color: var(--color-mid);
+  font-size: var(--text-sm);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+
+.productSelectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-primary-soft);
+}
+
+.dropdownItemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownName {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.dropdownSku {
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+}
+
+.dropdownStock {
+  font-size: var(--text-sm);
+  color: var(--color-dark-2);
+}
+
+.dropdownEmpty {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-mid);
+  font-size: var(--text-sm);
+}
+
+.selectedProductCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 640px) {
+  .selectedProductCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.productImage {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholderIcon {
+  color: var(--color-mid);
+}
+
+.productDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.productTitle {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.productMeta {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.badgeSku {
+  background-color: var(--color-light);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--color-dark-2);
+}
+
+.badgeCat {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.productStats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 120px;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.statLabel {
+  color: var(--color-mid);
+}
+
+.statValue {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.statValueHighlight {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.typeCard {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.typeCard:hover {
+  border-color: var(--color-primary-soft);
+}
+
+.typeCardActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.iconBox {
+  display: flex;
+  color: var(--color-error);
+  background-color: var(--color-error-bg);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.iconBoxOrange {
+  display: flex;
+  color: #EA580C;
+  background-color: #FFF7ED;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-dark-2);
+  line-height: 1.4;
+}
+
+.cardContent {
+  margin-top: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.checkboxGroupLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.errorText {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin-bottom: var(--space-1);
+}
+
+.checkboxList {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.checkboxOption {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.checkboxOption input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.toggleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 80%;
+}
+
+.toggleTitle {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.toggleDesc {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}
+
+.formFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}

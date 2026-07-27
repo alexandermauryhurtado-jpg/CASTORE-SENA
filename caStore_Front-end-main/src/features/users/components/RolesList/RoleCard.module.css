@@ -1,0 +1,249 @@
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-soft);
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  padding: var(--space-5);
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.titleStack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleName {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.typeBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.system { background-color: #EFF6FF; color: #2563EB; }
+.custom { background-color: #F0FDF4; color: #16A34A; }
+
+.userCounter {
+  position: relative;
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+}
+
+.counterContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hasUsers {
+  color: #F97316;
+  cursor: pointer;
+}
+
+.usersHoverList {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-dark);
+  color: white;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.userCounter:hover .usersHoverList {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(4px);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.permissionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.full { background-color: #DCFCE7; color: #166534; }
+.partial { background-color: #FEF3C7; color: #92400E; }
+.none { 
+  background-color: #F1F5F9; 
+  color: #94A3B8; 
+  text-decoration: line-through; 
+}
+
+.extraChipWrapper {
+  position: relative;
+}
+
+.more {
+  background-color: #F1F5F9;
+  color: var(--color-dark-2);
+  cursor: help;
+}
+
+.extraTooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  min-width: 120px;
+}
+
+.extraChipWrapper:hover .extraTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-4px);
+}
+
+.footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border-soft);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  background-color: #FAFAFA;
+  border-bottom-left-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+
+.customActions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnLink {
+  text-decoration: none;
+}
+
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btnSecondary:hover {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-mid);
+}
+
+.btnDelete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  color: #EF4444;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px;
+  position: relative;
+}
+
+.btnDelete:hover:not(.disabled) {
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deleteTooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: #1E293B;
+  color: white;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  font-size: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+  z-index: 100;
+}
+
+.btnDelete:hover.disabled .deleteTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-8px);
+}

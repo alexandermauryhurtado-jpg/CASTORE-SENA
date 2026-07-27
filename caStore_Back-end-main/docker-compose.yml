@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: sgia_mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: sgia_dev
+      MYSQL_USER: sgia_user
+      MYSQL_PASSWORD: Sgia@2026!
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      target: development   # Usa el stage de desarrollo (hot-reload)
+    container_name: sgia_backend_api
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./:/usr/src/app          # Monta el código fuente para hot-reload
+      - /usr/src/app/node_modules
+    env_file:
+      - .env.development         # Variables de entorno de desarrollo
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  mysql_data:

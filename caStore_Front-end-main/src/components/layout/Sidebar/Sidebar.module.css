@@ -1,0 +1,116 @@
+.sidebar {
+  width: 240px;
+  background-color: #1E293B;
+  color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-5);
+  gap: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logoCircle {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.nav {
+  flex: 1;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  overflow-y: auto;
+}
+
+.groupLabel {
+  display: block;
+  font-size: var(--text-xs);
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-2);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.menuItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #CBD5E1;
+}
+
+.menuItem.active {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 500;
+}
+
+.badge {
+  position: absolute;
+  right: var(--space-4);
+  background-color: var(--color-error);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+}
+
+.footer {
+  padding: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: #475569;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Button to reveal as overlay will be added via Topbar logic if needed */
+  }
+}

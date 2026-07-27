@@ -1,0 +1,6 @@
+.container { background: white; border-radius: var(--radius-lg); border: 1px solid var(--color-border); overflow: hidden; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { padding: 16px; text-align: left; background: var(--color-light); font-size: 12px; color: var(--color-mid); border-bottom: 1px solid var(--color-border); }
+.table td { padding: 16px; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+.active { color: #059669; font-weight: 600; }
+.inactive { color: #DC2626; font-weight: 600; }

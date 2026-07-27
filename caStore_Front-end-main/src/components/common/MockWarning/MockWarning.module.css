@@ -1,0 +1,17 @@
+.warning {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: #FFFBEB;
+  border: 1px solid #FEF3C7;
+  color: #92400E;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.warning strong {
+  margin-right: var(--space-1);
+}

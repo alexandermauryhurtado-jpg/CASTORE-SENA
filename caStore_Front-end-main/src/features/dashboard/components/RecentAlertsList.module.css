@@ -1,0 +1,179 @@
+.card {
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.badgeCount {
+  background-color: var(--color-error);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.link {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-light);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background-color: var(--color-light);
+}
+
+.iconGroup {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.iconLow {
+  color: var(--color-error);
+}
+
+.iconExpiry {
+  color: var(--color-warning);
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.productSku {
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+  font-family: var(--font-mono);
+}
+
+.rightInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.badgeRed, .badgeYellow, .badgeOrange {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.badgeRed {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.badgeYellow {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.badgeOrange {
+  background-color: #FFF7ED;
+  color: #C2410C;
+}
+
+.stockInfo {
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+}
+
+.empty {
+  padding: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-success);
+  text-align: center;
+}
+
+.empty p {
+  color: var(--color-mid);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.checkIcon {
+  color: var(--color-success);
+}
+
+.skeletonHeader {
+  height: 52px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonItem {
+  height: 64px;
+  margin: 0 var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  animation: shimmer 1.5s infinite;
+  opacity: 0.5;
+}
+
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}

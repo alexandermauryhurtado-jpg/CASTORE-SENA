@@ -1,0 +1,16 @@
+.container { width: 100%; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+.card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.nit { color: var(--color-mid); font-size: 12px; margin-bottom: 12px; }
+.info { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 12px; }
+.type { background: var(--color-light); padding: 2px 6px; border-radius: 4px; }
+.contact { font-size: 13px; color: var(--color-dark); border-top: 1px solid var(--color-border); padding-top: 12px; }

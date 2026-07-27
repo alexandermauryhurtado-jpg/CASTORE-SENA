@@ -1,0 +1,324 @@
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-10);
+}
+
+.warehouseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: var(--space-4) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.warehouseInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.warehouseName {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.warehouseCode {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background-color: #F1F5F9;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-mid);
+}
+
+.minimap {
+  display: flex;
+  gap: 4px;
+}
+
+.miniZone {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.zonesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.zoneBlock {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+/* Zone Backgrounds */
+.zoneBg_ZA { background-color: #EFF6FF; border-color: #BFDBFE; }
+.zoneBg_ZB { background-color: #F0FDF4; border-color: #BBF7D0; }
+.zoneBg_ZC { background-color: #FFFBEB; border-color: #FEF3C7; }
+.zoneBg_ZD { background-color: #FFF7ED; border-color: #FFEDD5; }
+
+.zoneColorMini_ZA { background-color: #3B82F6; }
+.zoneColorMini_ZB { background-color: #22C55E; }
+.zoneColorMini_ZC { background-color: #F59E0B; }
+.zoneColorMini_ZD { background-color: #F97316; }
+
+.zoneHeader {
+  padding: var(--space-5) var(--space-6);
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.4);
+}
+
+.zoneTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.zoneCode {
+  font-weight: 800;
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+}
+
+.zoneName {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  color: var(--color-mid);
+  cursor: pointer;
+}
+
+.zoneOccupancy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.occupancyText {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-dark-2);
+}
+
+.progressBar {
+  height: 4px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.bgGreen { background-color: #16A34A; }
+.bgYellow { background-color: #D97706; }
+.bgRed { background-color: #DC2626; }
+
+.zoneContent {
+  padding: var(--space-6);
+  display: flex;
+  gap: var(--space-10);
+  overflow-x: auto;
+}
+
+.aisleCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 120px;
+}
+
+.aisleLabel {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-mid);
+  text-transform: uppercase;
+}
+
+.shelvesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.shelfBox {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.shelfBox:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.shelfBox.empty {
+  background-color: rgba(255,255,255,0.5);
+  border-style: dashed;
+}
+
+.shelfCode {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-mid);
+}
+
+.shelfOccupancy {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.occupancyIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.dotGreen { background-color: #22C55E; }
+.dotYellow { background-color: #EAB308; }
+.dotRed { background-color: #EF4444; }
+.dotGray { background-color: #CBD5E1; }
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: white;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  width: 200px;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  pointer-events: none;
+}
+
+.shelfBox:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltipHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.tooltipHeader strong { font-size: 13px; color: var(--color-dark); }
+.tooltipHeader code { font-size: 10px; color: var(--color-mid); }
+
+.tooltipContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-4);
+}
+
+.tooltipItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 11px;
+  color: var(--color-dark-2);
+}
+
+.tooltipFooter {
+  display: flex;
+  gap: 6px;
+}
+
+.tooltipBtnPrimary {
+  flex: 1;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tooltipBtnSecondary {
+  flex: 1;
+  background-color: #F1F5F9;
+  color: var(--color-dark);
+  border: none;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.collapsed {
+  height: auto;
+}
+
+.skeletonLine {
+  background: linear-gradient(90deg, var(--color-border) 25%, #f1f5f9 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.2s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.emptyMap {
+  text-align: center;
+  color: var(--color-mid);
+  padding: var(--space-8);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .zoneContent { flex-direction: column; gap: var(--space-6); }
+  .aisleCol { width: 100%; }
+}

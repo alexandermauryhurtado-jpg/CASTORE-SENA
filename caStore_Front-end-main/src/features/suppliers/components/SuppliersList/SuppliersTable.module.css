@@ -1,0 +1,181 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.table th {
+  padding: var(--space-4);
+  background-color: var(--color-surface-alt);
+  color: var(--color-mid);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-dark);
+}
+
+.row {
+  transition: background-color var(--transition-fast);
+}
+
+.row:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.idCode {
+  font-family: monospace;
+  background-color: var(--color-surface-alt);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.providerCell {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.commercialName {
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.businessName {
+  font-size: 11px;
+  color: var(--color-mid);
+}
+
+/* Tooltip style */
+.providerCell:hover .tooltip,
+.tooltipVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1E293B;
+  color: white;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  transform: translateY(5px);
+  pointer-events: none;
+  min-width: 200px;
+  margin-top: 5px;
+}
+
+.tpItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.tpItem:last-child { margin-bottom: 0; }
+
+.nit {
+  font-family: monospace;
+  color: var(--color-mid);
+}
+
+.typeBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badgeBlue { background-color: #E0F2FE; color: #0369A1; }
+.badgeGreen { background-color: #DCFCE7; color: #15803D; }
+.badgeOrange { background-color: #FFEDD5; color: #C2410C; }
+.badgePurple { background-color: #F3E8FF; color: #7E22CE; }
+
+.taxBadge {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+}
+
+.cityCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-mid);
+}
+
+.pinIcon {
+  color: var(--color-primary);
+}
+
+.contactCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactName {
+  font-weight: 500;
+}
+
+.contactEmail {
+  font-size: 11px;
+  color: var(--color-mid);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.actionBtn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-mid);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.emptyCell {
+  padding: var(--space-12) 0;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-mid);
+}

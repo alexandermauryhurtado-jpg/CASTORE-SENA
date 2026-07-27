@@ -1,0 +1,143 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skuBanner {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.skuBannerContent {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.skuLabel {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.skuBadge {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  padding: var(--space-1) var(--space-3);
+}
+
+.skuHint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+  margin-left: auto;
+}
+
+.infoIcon {
+  color: var(--color-info);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionTitle {
+  margin: 0 0 var(--space-4) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.rowFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .rowFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toggleField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  background-color: var(--color-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.toggleText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.toggleLabel {
+  font-weight: 500;
+  color: var(--color-dark);
+  font-size: var(--text-sm);
+}
+
+.toggleHint {
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.imageHint {
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+  margin: 0;
+}
+
+.loadingText {
+  margin: 0;
+  color: var(--color-mid);
+  font-size: var(--text-base);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}

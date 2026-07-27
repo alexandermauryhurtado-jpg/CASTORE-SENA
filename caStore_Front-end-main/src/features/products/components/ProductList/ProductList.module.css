@@ -1,0 +1,189 @@
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .statsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statsSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-dark-2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.searchWrap {
+  flex: 1;
+  min-width: 300px;
+}
+
+.filtersWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.statusSelect {
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  font-family: inherit;
+  font-size: var(--text-base);
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.statusSelect:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-soft);
+}
+
+.resultsCount {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+  white-space: nowrap;
+}
+
+.skuText {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-dark-2);
+  background-color: var(--color-surface-alt);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.productImg {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background-color: var(--color-surface-alt);
+}
+
+.productName {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.categoryText {
+  color: var(--color-dark-2);
+  font-size: var(--text-sm);
+}
+
+.stockCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stockNum,
+.stockZero,
+.stockLow,
+.stockOk {
+  font-weight: 500;
+  min-width: 24px;
+}
+
+.stockZero {
+  color: var(--color-error);
+}
+
+.stockLow {
+  color: var(--color-warning);
+}
+
+.stockOk {
+  color: var(--color-dark-2);
+}
+
+.actionsCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.iconBtn {
+  padding: var(--space-2) !important;
+  border-color: transparent !important;
+  color: var(--color-mid) !important;
+}
+
+.iconBtn:hover {
+  background-color: var(--color-surface-alt) !important;
+  color: var(--color-dark) !important;
+}
+
+.emptyContent {
+  color: var(--color-mid);
+}
+
+.emptyIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+  color: var(--color-border);
+}
+
+.emptyContent h3 {
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-dark);
+  font-family: var(--font-display);
+}
+
+.emptyContent p {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+}
+
+.modalIcon {
+  color: var(--color-warning);
+}

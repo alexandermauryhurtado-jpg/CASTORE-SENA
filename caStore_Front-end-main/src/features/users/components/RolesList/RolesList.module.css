@@ -1,0 +1,219 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -55px;
+  margin-bottom: 25px;
+}
+
+.summarySection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.summaryCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.summaryIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.summaryIcon.orange { background-color: #FFF7ED; color: #F97316; }
+.summaryIcon.blue { background-color: #EFF6FF; color: #3B82F6; }
+.summaryIcon.green { background-color: #F0FDF4; color: #22C55E; }
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: var(--color-dark);
+  color: white;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  font-size: 10px;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  z-index: 20;
+}
+
+.summaryIcon:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-8px);
+}
+
+.summaryInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryValue {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.summaryLabel {
+  font-size: var(--text-xs);
+  color: var(--color-mid);
+  font-weight: 500;
+}
+
+.filterBar {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.searchBox {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-mid);
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-3);
+  padding-left: 40px;
+  border: 1px solid transparent;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--color-primary);
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.typeSelect {
+  width: 180px;
+}
+
+.rolesGridSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.groupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.groupTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.groupLine {
+  height: 1px;
+  background-color: var(--color-border);
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  color: var(--color-mid);
+  text-align: center;
+}
+
+.emptyState h3 {
+  margin-top: var(--space-4);
+  color: var(--color-dark);
+}
+
+/* CloneRoleModal content (uses shared Modal from components/ui) */
+.modalSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.infoBox {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-mid);
+  line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .summarySection { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .filterBar { flex-direction: column; }
+  .typeSelect { width: 100%; }
+}

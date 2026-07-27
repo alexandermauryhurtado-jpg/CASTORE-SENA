@@ -1,0 +1,77 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.cardSkeleton {
+  height: 120px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s infinite;
+}
+
+.chartRow {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.largeChartSkeleton {
+  flex: 2;
+  height: 360px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s infinite;
+}
+
+.smallChartSkeleton {
+  flex: 1;
+  height: 360px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s infinite;
+}
+
+.widgetRow {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.widgetSkeleton {
+  flex: 1;
+  height: 420px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .kpiRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chartRow, .widgetRow {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpiRow {
+    grid-template-columns: 1fr;
+  }
+}

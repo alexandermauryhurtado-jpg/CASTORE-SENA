@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.chartWrapper {
+  position: relative;
+}
+
+.centerText {
+  position: absolute;
+  top: 50%;
+  left: 31%; /* Adjusted for legend on right */
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.totalNum {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-dark);
+  line-height: 1;
+}
+
+.totalLabel {
+  font-size: 10px;
+  color: var(--color-mid);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.legendLabel {
+  font-size: 12px;
+  color: var(--color-dark-2);
+}
+
+.tooltip {
+  background-color: white;
+  border: 1px solid var(--color-border);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.tooltipLabel {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+  margin-bottom: var(--space-2);
+}
+
+.tooltipItem {
+  font-size: var(--text-xs);
+  color: var(--color-dark-2);
+}
+
+.skeleton {
+  width: 100%;
+  height: 280px;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  animation: shimmer 1.5s infinite;
+}
+
+.empty {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mid);
+  font-size: var(--text-sm);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .centerText {
+    left: 50%;
+  }
+}
