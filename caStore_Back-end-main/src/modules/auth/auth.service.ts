@@ -27,7 +27,7 @@ export class AuthService {
 
   async login(dto: LoginDto): Promise<LoginResult> {
     const user = await this.repo.findUserByEmail(dto.email);
-
+   
     if (!user) {
       throw new UnauthorizedError('Credenciales incorrectas');
     }
