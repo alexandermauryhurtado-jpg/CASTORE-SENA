@@ -62,7 +62,7 @@ export default function MovementsPage() {
                 <RefreshCw size={18} />
                 <span>Actualizar</span>
               </button>
-              <Link href="/movements/new" passHref legacyBehavior>
+              <Link href="/movements/new">
                 <Button variant="primary">
                   <Plus size={16} />
                   Registrar movimiento

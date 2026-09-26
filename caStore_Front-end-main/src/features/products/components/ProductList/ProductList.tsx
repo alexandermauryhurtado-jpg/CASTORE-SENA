@@ -229,7 +229,7 @@ export default function ProductList() {
       subtitle="Administra el inventario de repuestos y accesorios automotrices."
       actions={
         canCreate('products') ? (
-          <Link href="/products/new" passHref legacyBehavior>
+          <Link href="/products/new">
             <Button variant="primary">
               <Plus size={16} />
               Agregar producto
